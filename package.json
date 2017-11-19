@@ -1,0 +1,27 @@
+{
+  "name": "shaarli-web-extension",
+  "version": "0.0.1",
+  "description": "Share your link on Firefox Quantum",
+  "main": "background.js",
+  "keywords": [
+    "web",
+    "extension",
+    "firefox"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ikipatang/shaarli-web-extension.git"
+  },
+  "author": "ikipatang@github",
+  "license": "GPL v3",
+  "devDependencies": {
+    "web-ext": "^2.2.2"
+  },
+  "scripts": {
+    "slate": "rm -rf node_modules && yarn install",
+    "lint": "web-ext lint",
+    "start": "web-ext run",
+    "build": "web-ext build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
