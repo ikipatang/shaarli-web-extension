@@ -2,7 +2,7 @@
   "name": "Web Extension for Shaarli",
   "description": "",
   "version": "0.0.1",
-  "homepage_url": "https://github.com/",
+  "homepage_url": "https://github.com/ikipatang/shaarli-web-extension",
   "manifest_version": 2,
   "icons": {
     "48": "icons/icon-48.png"
@@ -19,6 +19,6 @@
   },
   "browser_action": {
     "default_icon": "icons/icon-24.png",
-    "default_title": "Share your link !"
+    "default_title": "Share"
   }
 }

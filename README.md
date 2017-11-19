@@ -16,4 +16,4 @@ So here we go for a Firefox Quantum Web-Extension.
 
 
 # LICENSE
-The project is in licence GPL v3, see LICENCE
+The project is in licence GPL v3, see [LICENCE](LICENCE)
