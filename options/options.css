@@ -1,0 +1,18 @@
+
+body {
+  width: 25em;
+  font-family: "Open Sans Light", sans-serif;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+input#url {
+  margin: 0.5em;
+  width: 50em;
+  height: 2.5em;
+}
+
+input {
+  width: 20em;
+  height: 2.5em;
+}
