@@ -1,6 +1,6 @@
 {
   "name": "shaarli-web-extension",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Share your link to your Shaarli on Firefox Quantum",
   "main": "src/background.js",
   "keywords": [

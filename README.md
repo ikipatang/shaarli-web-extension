@@ -9,6 +9,9 @@ See [shaarli](https://github.com/shaarli/Shaarli).
 [Aeris](https://bitbucket.org/aeris/shaarli-extension) made a really cool extension but with firefox version 57 (Quantum) the extension has become obsolete.    
 So here we go for a Firefox Quantum Web-Extension.
 
+## Where to find it
+https://addons.mozilla.org/fr/firefox/addon/web-extension-for-shaarli/
+
 ## Features
 - Set your shaarli URL in add-on settings
 - Share your link with main button action

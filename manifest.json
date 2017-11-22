@@ -1,7 +1,7 @@
 {
   "name": "Web Extension for Shaarli",
   "description": "Share your link to your Shaarli on Firefox Quantum",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage_url": "https://github.com/ikipatang/shaarli-web-extension",
   "manifest_version": 2,
   "icons": {
