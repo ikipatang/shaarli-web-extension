@@ -1,3 +1,17 @@
+
+/**
+ * Open the given url in a popup
+ * @param  {string} url -
+ * @return {void}     -
+ */
+function openInPopup(url) {
+  browser.windows.create({
+    url,
+    type: 'popup',
+    allowScriptsToClose: true,
+  });
+}
+
 /**
  * Share Current Tab
  * @return {void}       -
@@ -10,13 +24,12 @@ function shareCurrentTab() {
     const url = tabs[0].url;
     const title = tabs[0].title || url;
     browser.storage.local.get('url').then((storage) => {
-      const shareUrl = `${storage.url}?post=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&source=bookmarklet`;
-
-      browser.windows.create({
-        url: shareUrl,
-        type: 'popup',
-        allowScriptsToClose: true,
-      });
+      if(storage.url){
+        const shareUrl = `${storage.url}?post=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&source=bookmarklet`;
+        openInPopup(shareUrl);
+      }else{
+        browser.runtime.openOptionsPage()
+      }
     });
   });
 }
