@@ -9,6 +9,8 @@ function openInPopup(url) {
     url,
     type: 'popup',
     allowScriptsToClose: true,
+    height: 600,
+    width: 900,
   });
 }
 
