@@ -5,7 +5,7 @@
   "homepage_url": "https://github.com/ikipatang/shaarli-web-extension",
   "manifest_version": 2,
   "icons": {
-    "48": "icons/icon-48.png"
+    "48": "resources/icons/icon-48.png"
   },
   "permissions": [
     "tabs",
@@ -18,7 +18,7 @@
     "scripts": ["storage.js", "background.js"]
   },
   "browser_action": {
-    "default_icon": "icons/icon-24.png",
+    "default_icon": "resources/icons/icon-24.png",
     "default_title": "Share"
   }
 }
