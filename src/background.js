@@ -1,4 +1,3 @@
-
 /**
  * Open the given url in a popup
  * @param  {string} url -

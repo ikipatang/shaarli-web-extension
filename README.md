@@ -17,9 +17,14 @@ https://addons.mozilla.org/fr/firefox/addon/web-extension-for-shaarli/
 - Share your link with main button action
 
 ### TODO
+- Allow to set Popup Dimension in settings or save it on close
 - Add button menu with action:
   - Share link
   - Go to shaarli
+
+## Known bug
+- Title and URL are uri_encoded twice in "Firefox for Linux"
+**NB**: bug not present in dev mode and in windows
 
 ## LICENSE
 The project is in licence GPL v3, see [LICENCE](LICENCE)
