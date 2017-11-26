@@ -18,7 +18,7 @@ If we don't, then store the default settings.
 */
 function checkStoredSettings(storedSettings) {
   if (!storedSettings.storage) {
-    browser.storage.local.set({storage});
+    browser.storage.local.set(storage);
   }
 }
 

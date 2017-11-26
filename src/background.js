@@ -20,7 +20,7 @@ function openInPopup(url) {
 function shareCurrentTab(tab) {
   const url = tab.url;
   const title = tab.title || url;
-  browser.storage.local.get('url').then((storage) => {
+  browser.storage.local.get().then((storage) => {
     if(!storage.url){
       browser.runtime.openOptionsPage();
       return;
