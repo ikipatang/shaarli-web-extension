@@ -30,4 +30,8 @@ function shareCurrentTab(tab) {
   });
 }
 
+/*
+Listeners
+ */
 browser.browserAction.onClicked.addListener(shareCurrentTab);
+browser.pageAction.onClicked.addListener(shareCurrentTab);

@@ -3,6 +3,7 @@ Default settings. Initialize storage to these values.
 */
 var storage = {
   url: '',
+  pageAction: false,
 }
 
 /*
