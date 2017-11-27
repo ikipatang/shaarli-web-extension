@@ -7,10 +7,24 @@
   </head>
 
   <body>
-
-    <div>URL: <input id="url" type="text"/></div>
-    <div>Address Bar: <input id="pageAction" type="checkbox"/></div>
-    <input type="button" value="Save preferences" id="save-button"/>
+    <div class="main">
+      <div class="row">
+        <label>
+          <span>Shaarli URL</span>
+          <input id="url" type="text" name="url">
+        </label>
+      </div>
+      <div class="row">
+        <label>
+          <span>Address bar</span>
+          <input id="pageAction" type="checkbox" name="pageAction" checked>
+        </label>
+      </div>
+      <div class="row">
+        <span>&nbsp;</span>
+        <button id="save-button" type="submit">Save preferences</button>
+      </div>
+    </div>
 
     <script src="options.js"></script>
   </body>

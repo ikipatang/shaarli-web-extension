@@ -1,18 +1,70 @@
-
-body {
-  width: 25em;
-  font-family: "Open Sans Light", sans-serif;
-  font-size: 0.9em;
-  font-weight: 300;
+.main{
+  font: 14px sans-serif;
 }
 
-input#url {
-  margin: 0.5em;
-  width: 50em;
-  height: 2.5em;
+.main .row{
+  text-align: left;
 }
 
-input {
-  width: 20em;
-  height: 2.5em;
+/* The form title */
+
+.main .row > label span{
+  color: #1a1a1a;
+  width: 100em;
+  vertical-align: center;
+  padding-left: 5px;
+  padding-right: 30px;
 }
+
+.main input{
+  color:  #1a1a12;
+  width: 31em;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+  padding: 5px;
+  border: 1px solid #dbdbdb;
+}
+
+.main input[type=checkbox]{
+  box-shadow: none;
+  width: auto;
+  margin-top: 13px;
+}
+
+.main button{
+  display: block;
+  border-radius: 2px;
+  font-weight: bold;
+  padding: 8px 22px;
+  margin-left: 10em;
+}
+
+/*	Making the form responsive. Remove this media query
+  if you don't need the form to work on mobile devices. */
+
+/*@media (max-width: 600px) {
+
+  .main{
+      padding: 30px;
+      max-width: 480px;
+  }
+
+  .main .row{
+      max-width: 300px;
+      margin: 25px auto;
+      text-align: left;
+  }
+
+  .main .row > label span{
+      display: block;
+      text-align: left;
+      padding: 0 0 15px;
+  }
+
+  .main input[type=checkbox]{
+      margin-top:0;
+  }
+
+  .main button{
+      margin: 0;
+  }
+}*/
