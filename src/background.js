@@ -37,9 +37,7 @@ function shareCurrentTab(tab) {
  */
 function showPageAction(tabId){
   browser.storage.local.get().then((storage) => {
-    if(storage.pageAction){
-      browser.pageAction.show(tabId);
-    }
+    storage.pageAction ? browser.pageAction.show(tabId) : browser.pageAction.hide(tabId);
   });
 }
 
