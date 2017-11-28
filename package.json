@@ -15,6 +15,7 @@
   "author": "5412352+ikipatang@users.noreply.github.com",
   "license": "GPL-3.0",
   "devDependencies": {
+    "version-changelog": "^2.1.0",
     "web-ext": "^2.2.2"
   },
   "scripts": {
@@ -22,6 +23,7 @@
     "lint": "web-ext lint",
     "start": "web-ext run",
     "build": "web-ext build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "version-changelog CHANGELOG.md"
   }
 }
