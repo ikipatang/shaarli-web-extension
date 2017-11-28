@@ -1,26 +1,40 @@
-/*
-Store options UI using browser.storage.local.
-*/
+/**
+ * Store options UI using browser.storage.local.
+ * @return {void}       -
+ */
 function storeSettings() {
-  const url = document.querySelector("#url");
-  // console.log('storeSettings url');
-  // console.log(url);
-  browser.storage.local.set({
-    url: url.value,
-  });
+  const settings = {
+    url: document.querySelector("#url").value,
+    pageAction: document.querySelector("#pageAction").checked,
+  };
+  // console.log('storeSettings settings');
+  // console.log(settings);
+  browser.storage.local.set(settings);
 }
 
-/*
-Update the options UI with the settings values retrieved from storage,
-or the default settings if the stored settings are empty.
-*/
+/**
+ * Update the options UI with the settings values retrieved from storage,
+ * or the default settings if the stored settings are empty.
+ * @param  {object} restoredSettings  -
+ * @return {void}                     -
+ */
 function updateUI(restoredSettings) {
   const url = document.querySelector("#url");
+  url.value = restoredSettings.url;
   // console.log('restoredSettings url');
   // console.log(url);
-  url.value = restoredSettings.url || "";
+
+  const pageAction = document.querySelector("#pageAction");
+  pageAction.checked = restoredSettings.pageAction;
+  // console.log('restoredSettings pageAction');
+  // console.log(pageAction);
 }
 
+/**
+ * Display on error
+ * @param  {object} error -
+ * @return {void}   -
+ */
 function onError(e) {
   console.error(e);
 }

@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## Changed
+- Improved share current tab function
+- Improved browser storage initialilisation
+- Better looking settings form
+
+## Added
+- New share button in address bar       
+  Share button in address bar can be enabled in settings, disabled by default
+
 ## [0.0.2][] - 2017-11-23
 - Create extension settings
   - Allow to set your Shaarli URL

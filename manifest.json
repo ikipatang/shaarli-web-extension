@@ -20,5 +20,10 @@
   "browser_action": {
     "default_icon": "resources/icons/icon-24.png",
     "default_title": "Share"
+  },
+  "page_action": {
+    "browser_style": false,
+    "default_icon": "resources/icons/icon-24.png",
+    "default_title": "Share"
   }
 }

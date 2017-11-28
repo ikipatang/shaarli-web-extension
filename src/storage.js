@@ -3,6 +3,7 @@ Default settings. Initialize storage to these values.
 */
 var storage = {
   url: '',
+  pageAction: false,
 }
 
 /*
@@ -18,7 +19,7 @@ If we don't, then store the default settings.
 */
 function checkStoredSettings(storedSettings) {
   if (!storedSettings.storage) {
-    browser.storage.local.set({storage});
+    browser.storage.local.set(storage);
   }
 }
 
