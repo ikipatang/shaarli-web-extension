@@ -13,12 +13,17 @@ So here we go for a Firefox Quantum Web-Extension.
 https://addons.mozilla.org/fr/firefox/addon/web-extension-for-shaarli/
 
 ## Features
-- Set your shaarli URL in add-on settings
-- Share your link with main button action
+- Share button in toolbar
+- Share button in address bar (disabled by default)
+
+### Extension settings
+- Set your shaarli URL
+- Set popup dimensions (numeric fields)
+- Enable/disable share button in address bar
 
 ### TODO
-- Allow to set Popup Dimension in settings or save it on close
-- Add button menu with action:
+- Allow popup dimensions to be saved on popup exit
+- Allow multiple action on toolbar button (optional):
   - Share link
   - Go to shaarli
 
