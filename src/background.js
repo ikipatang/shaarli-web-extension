@@ -1,15 +1,17 @@
 /**
  * Open the given url in a popup
- * @param  {string} url -
- * @return {void}     -
+ * @param  {string} url     -
+ * @param  {number} width   -
+ * @param  {number} height  -
+ * @return {void}           -
  */
-function openInPopup(url) {
+function openInPopup(url, width, height) {
   browser.windows.create({
     url,
     type: 'popup',
     allowScriptsToClose: true,
-    height: 600,
-    width: 900,
+    width,
+    height,
   });
 }
 
@@ -26,7 +28,7 @@ function shareCurrentTab(tab) {
       return;
     }
     const shareUrl = `${storage.url}?post=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&source=bookmarklet`;
-    openInPopup(shareUrl);
+    openInPopup(shareUrl, storage.popupWidth, storage.popupHeight);
   });
 }
 
