@@ -5,6 +5,8 @@
 function storeSettings() {
   const settings = {
     url: document.querySelector("#url").value,
+    popupWidth: parseInt(document.querySelector("#popupWidth").value),
+    popupHeight: parseInt(document.querySelector("#popupHeight").value),
     pageAction: document.querySelector("#pageAction").checked,
   };
   // console.log('storeSettings settings');
@@ -19,15 +21,19 @@ function storeSettings() {
  * @return {void}                     -
  */
 function updateUI(restoredSettings) {
+  // console.log('restoredSettings');
+  // console.dir(restoredSettings, { depth: 10, colors: true }); // DEBUG
+
   const url = document.querySelector("#url");
   url.value = restoredSettings.url;
-  // console.log('restoredSettings url');
-  // console.log(url);
+
+  const popupWidth = document.querySelector("#popupWidth");
+  popupWidth.value = restoredSettings.popupWidth;
+  const popupHeight = document.querySelector("#popupHeight");
+  popupHeight.value = restoredSettings.popupHeight;
 
   const pageAction = document.querySelector("#pageAction");
   pageAction.checked = restoredSettings.pageAction;
-  // console.log('restoredSettings pageAction');
-  // console.log(pageAction);
 }
 
 /**
