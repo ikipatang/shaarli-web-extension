@@ -20,7 +20,7 @@ On startup, check whether we have stored settings.
 If we don't, then store the default settings.
 */
 function checkStoredSettings(storedSettings) {
-  if (!storedSettings.storage) {
+  if (storedSettings.url === undefined) {
     browser.storage.local.set(storage);
   }
 }
