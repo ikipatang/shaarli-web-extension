@@ -1,17 +1,16 @@
+
 /**
- * Store options UI using browser.storage.local.
- * @return {void}       -
+ * ParseInt with minimum dimension of 45px
+ * @param  {string} dimension -
+ * @return {int}              -
  */
-function storeSettings() {
-  const settings = {
-    url: document.querySelector("#url").value,
-    popupWidth: parseInt(document.querySelector("#popupWidth").value),
-    popupHeight: parseInt(document.querySelector("#popupHeight").value),
-    pageAction: document.querySelector("#pageAction").checked,
-  };
-  // console.log('storeSettings settings');
-  // console.log(settings);
-  browser.storage.local.set(settings);
+function parseIntDimension(dimension){
+  const minDimension = 45;
+  let parsedDimension = parseInt(dimension);
+  if(isNaN(parsedDimension) || parsedDimension < minDimension){
+    parsedDimension = minDimension;
+  }
+  return parsedDimension;
 }
 
 /**
@@ -24,16 +23,43 @@ function updateUI(restoredSettings) {
   // console.log('restoredSettings');
   // console.dir(restoredSettings, { depth: 10, colors: true }); // DEBUG
 
+  // Get HTML input
   const url = document.querySelector("#url");
-  url.value = restoredSettings.url;
-
   const popupWidth = document.querySelector("#popupWidth");
-  popupWidth.value = restoredSettings.popupWidth;
   const popupHeight = document.querySelector("#popupHeight");
-  popupHeight.value = restoredSettings.popupHeight;
-
   const pageAction = document.querySelector("#pageAction");
+
+  // Set HTML input with stored values
+  url.value = restoredSettings.url;
+  popupWidth.value = restoredSettings.popupWidth;
+  popupHeight.value = restoredSettings.popupHeight;
   pageAction.checked = restoredSettings.pageAction;
+}
+
+/**
+ * Store options UI using browser.storage.local.
+ * @return {void}       -
+ */
+function storeSettings() {
+  const url = document.querySelector("#url");
+  const popupWidth = document.querySelector("#popupWidth");
+  const popupHeight = document.querySelector("#popupHeight");
+  const pageAction = document.querySelector("#pageAction");
+
+  const settings = {
+    url: url.value,
+    popupWidth: parseIntDimension(popupWidth.value),
+    popupHeight: parseIntDimension(popupHeight.value),
+    pageAction: pageAction.checked,
+  };
+  // console.log('storeSettings settings');
+  // console.log(settings);
+
+  // Store in storage
+  browser.storage.local.set(settings);
+
+  // Update UI
+  updateUI(settings);
 }
 
 /**
