@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## Changed
+- Extension settings update after save
+
+## Added
+- Popup dimensions cannot be less than 45px
+
+## Fixed
+- Fixed settigns lost after restart
 
 ## [0.2.2][] - 2017-11-30
 
