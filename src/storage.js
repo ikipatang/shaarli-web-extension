@@ -8,17 +8,21 @@ var storage = {
   popupHeight: 600,
 }
 
-/*
-Generic error logger.
-*/
+/**
+ * Generic error logger.
+ * @param  {object} e -
+ * @return {void}     -
+ */
 function onError(e) {
   console.error(e);
 }
 
-/*
-On startup, check whether we have stored settings.
-If we don't, then store the default settings.
-*/
+/**
+ * On startup, check whether we have stored settings.
+ * If we don't, then store the default settings.
+ * @param  {object} storedSettings  -
+ * @return {void}                   -
+ */
 function checkStoredSettings(storedSettings) {
   if (storedSettings.url === undefined) {
     browser.storage.local.set(storage);
