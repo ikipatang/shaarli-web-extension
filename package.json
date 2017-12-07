@@ -22,6 +22,7 @@
     "slate": "rm -rf node_modules && yarn install",
     "lint": "web-ext lint",
     "start": "web-ext run",
+    "debug:build": "rm -rf web-ext-artifacts/*.zip && npm run build",
     "build": "web-ext build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "version-changelog CHANGELOG.md"
