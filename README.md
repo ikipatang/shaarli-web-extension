@@ -10,7 +10,7 @@ See [shaarli](https://github.com/shaarli/Shaarli).
 So here we go for a Firefox Quantum Web-Extension.
 
 ## Where to find it
-https://addons.mozilla.org/fr/firefox/addon/web-extension-for-shaarli/
+[Aeris/shaarli](https://addons.mozilla.org/fr/firefox/addon/shaarli/) version on firefox library has been updated       
 
 ## Features
 - Share button in toolbar
