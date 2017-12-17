@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.0.0][] - 2017-12-17
+
+## Changed
+- Changed version to match shaarli extension
+
 ## [0.2.6][] - 2017-12-07
 ## Changed
 - Extension settings update after save
@@ -38,7 +43,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Create toolbar button
 - Sharing a link will send user to extension settings if no Shaarli URL is set
 
-[Unreleased]: https://github.com/ikipatang/shaarli-web-extension/compare/v0.2.6...HEAD
+[Unreleased]: https://github.com/ikipatang/shaarli-web-extension/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/ikipatang/shaarli-web-extension/compare/v0.2.6...v2.0.0
 [0.2.6]: https://github.com/ikipatang/shaarli-web-extension/compare/v0.2.2...v0.2.6
 [0.2.2]: https://github.com/ikipatang/shaarli-web-extension/compare/0.1.0...v0.2.2
 [0.1.0]: https://github.com/ikipatang/shaarli-web-extension/compare/0.0.2...0.1.0

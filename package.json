@@ -1,6 +1,6 @@
 {
   "name": "shaarli-web-extension",
-  "version": "0.2.6",
+  "version": "2.0.0",
   "description": "Share your link to your Shaarli on Firefox Quantum",
   "main": "src/background.js",
   "keywords": [
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/ikipatang/shaarli-web-extension.git"
   },
-  "author": "5412352+ikipatang@users.noreply.github.com",
+  "author": "ikipatang",
   "license": "GPL-3.0",
   "devDependencies": {
     "version-changelog": "^2.1.0",
