@@ -4,8 +4,8 @@ Default settings. Initialize storage to these values.
 var storage = {
   url: '',
   pageAction: false,
-  popupWidth: 900,
-  popupHeight: 600,
+  popupWidth: 576,
+  popupHeight: 768,
 }
 
 /**
