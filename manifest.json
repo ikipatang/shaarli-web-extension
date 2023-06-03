@@ -25,5 +25,12 @@
     "browser_style": false,
     "default_icon": "resources/icons/icon-24.png",
     "default_title": "Share"
+  },
+	"commands": {
+  "_execute_browser_action": {
+    "suggested_key": {
+      "default": "Ctrl+Shift+S"
+    }
   }
+}
 }
