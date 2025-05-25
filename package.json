@@ -15,16 +15,13 @@
   "author": "ikipatang",
   "license": "GPL-3.0",
   "devDependencies": {
-    "version-changelog": "^2.1.0",
-    "web-ext": "^2.2.2"
+    "web-ext": "^8.7.0"
   },
   "scripts": {
-    "slate": "rm -rf node_modules && yarn install",
     "lint": "web-ext lint",
     "start": "web-ext run",
     "debug:build": "rm -rf web-ext-artifacts/*.zip && npm run build",
     "build": "web-ext build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "version": "version-changelog CHANGELOG.md"
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
