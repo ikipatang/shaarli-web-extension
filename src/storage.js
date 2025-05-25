@@ -2,11 +2,12 @@
 Default settings. Initialize storage to these values.
 */
 var DEFAULT_SETTINGS = {
-  url: '',
+  showMenu: true,
+  retrieveDescription: false,
   pageAction: false,
   popupWidth: 800,
   popupHeight: 900,
-  showMenu: true,
+  url: '',
   altUrl: '',
 }
 

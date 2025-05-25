@@ -25,18 +25,20 @@ function updateUI(restoredSettings) {
 
   // Get HTML input
   const showMenu = document.querySelector("#showMenu");
-  const url = document.querySelector("#url");
+  const pageAction = document.querySelector("#pageAction");
+  const retrieveDescription = document.querySelector("#retrieveDescription");
   const popupWidth = document.querySelector("#popupWidth");
   const popupHeight = document.querySelector("#popupHeight");
-  const pageAction = document.querySelector("#pageAction");
+  const url = document.querySelector("#url");
   const altUrl = document.querySelector("#altUrl");
 
   // Set HTML input with stored values
-  url.value = restoredSettings.url;
+  showMenu.checked = restoredSettings.showMenu;
+  pageAction.checked = restoredSettings.pageAction;
+  retrieveDescription.checked = restoredSettings.retrieveDescription;
   popupWidth.value = restoredSettings.popupWidth;
   popupHeight.value = restoredSettings.popupHeight;
-  pageAction.checked = restoredSettings.pageAction;
-  showMenu.checked = restoredSettings.showMenu;
+  url.value = restoredSettings.url;
   altUrl.value = restoredSettings.altUrl;
 
   if(!showMenu.checked) {
@@ -50,18 +52,20 @@ function updateUI(restoredSettings) {
  */
 function storeSettings() {
   const showMenu = document.querySelector("#showMenu");
-  const url = document.querySelector("#url");
+  const pageAction = document.querySelector("#pageAction");
+  const retrieveDescription = document.querySelector("#retrieveDescription");
   const popupWidth = document.querySelector("#popupWidth");
   const popupHeight = document.querySelector("#popupHeight");
-  const pageAction = document.querySelector("#pageAction");
+  const url = document.querySelector("#url");
   const altUrl = document.querySelector("#altUrl");
 
   const settings = {
     showMenu: showMenu.checked,
-    url: url.value,
+    pageAction: pageAction.checked,
+    retrieveDescription: retrieveDescription.checked,
     popupWidth: parseIntDimension(popupWidth.value),
     popupHeight: parseIntDimension(popupHeight.value),
-    pageAction: pageAction.checked,
+    url: url.value,
     altUrl: altUrl.value,
   };
   // console.log('storeSettings settings');

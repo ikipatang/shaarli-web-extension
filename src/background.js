@@ -36,7 +36,10 @@ function shareCurrentTab(tab, main = true) {
 
       return;
     }
-    const shareUrl = `${shaarliUrl}?post=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&source=bookmarklet`;
+    let shareUrl = `${shaarliUrl}?post=${encodeURIComponent(url)}&source=bookmarklet`;
+    if(!storage.retrieveDescription) {
+      shareUrl += `&title=${encodeURIComponent(title)}`;
+    }
     openInPopup(shareUrl, storage.popupWidth, storage.popupHeight);
   });
 }
