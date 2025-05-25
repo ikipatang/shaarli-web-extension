@@ -1,11 +1,13 @@
 /*
 Default settings. Initialize storage to these values.
 */
-var storage = {
+var DEFAULT_SETTINGS = {
   url: '',
   pageAction: false,
-  popupWidth: 900,
-  popupHeight: 600,
+  popupWidth: 800,
+  popupHeight: 900,
+  showMenu: true,
+  altUrl: '',
 }
 
 /**
@@ -25,7 +27,7 @@ function onError(e) {
  */
 function checkStoredSettings(storedSettings) {
   if (storedSettings.url === undefined) {
-    browser.storage.local.set(storage);
+    browser.storage.local.set(DEFAULT_SETTINGS);
   }
 }
 
