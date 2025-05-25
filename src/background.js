@@ -6,13 +6,20 @@
  * @return {void}           -
  */
 function openInPopup(url, width, height) {
-  browser.windows.create({
-    url,
-    type: 'popup',
-    allowScriptsToClose: true,
-    width,
-    height,
-  });
+  if(browser.windows) {
+    browser.windows.create({
+      url,
+      type: 'popup',
+      allowScriptsToClose: true,
+      width,
+      height,
+    });
+  }else if(browser.tabs){
+    browser.tabs.create({
+      active: true,
+      url: url
+    })
+  }
 }
 
 /**
