@@ -23,13 +23,13 @@ function shareCurrentTab(tab, main = true) {
   const url = tab.url;
   const title = tab.title || url;
   browser.storage.local.get().then((storage) => {
-    const url = main ? storage.url : storage.altUrl;
-    if(!url){
+    const shaarliUrl = main ? storage.url : storage.altUrl;
+    if(!shaarliUrl){
       browser.runtime.openOptionsPage();
 
       return;
     }
-    const shareUrl = `${url}?post=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&source=bookmarklet`;
+    const shareUrl = `${shaarliUrl}?post=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&source=bookmarklet`;
     openInPopup(shareUrl, storage.popupWidth, storage.popupHeight);
   });
 }
