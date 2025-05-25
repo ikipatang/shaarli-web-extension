@@ -4,6 +4,11 @@
   "version": "2.0.0",
   "homepage_url": "https://github.com/ikipatang/shaarli-web-extension",
   "manifest_version": 2,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "shaarli@imirhil.fr"
+    }
+  },
   "icons": {
     "48": "resources/icons/icon-48.png"
   },
