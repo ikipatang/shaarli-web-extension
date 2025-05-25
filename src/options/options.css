@@ -1,15 +1,14 @@
-.main{
+.main {
   font: 14px sans-serif;
 }
 
-.main .row{
+.main .row {
   text-align: left;
   padding-top: 10px;
 }
 
 /* The form title */
-
-.main .row > label span{
+.main .row > label span {
   color: #1a1a1a;
   width: 200px;
   display: inline-block;
@@ -18,7 +17,7 @@
   padding-right: 30px;
 }
 
-.main input{
+.main input {
   color:  #1a1a12;
   width: 31em;
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
@@ -31,46 +30,42 @@
   margin-right: 10px;
 }
 
-.main input[type=checkbox]{
+.main input[type=checkbox] {
   box-shadow: none;
   width: auto;
 }
 
-.main button{
+.main button {
   display: block;
   border-radius: 2px;
   font-weight: bold;
   padding: 8px 22px;
-  margin-left: 10em;
 }
 
-/*	Making the form responsive. Remove this media query
-  if you don't need the form to work on mobile devices. */
+hr {
+  border: none;
+  border-top: 1px solid #ccc; /* Lighter gray line */
+  margin: 20px 0;
+}
 
-/*@media (max-width: 600px) {
+.main .button-row {
+  display: flex;
+  justify-content: flex-end; /* Align the button to the right */
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
 
-  .main{
-      padding: 30px;
-      max-width: 480px;
-  }
+button#save-button {
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #0078d4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
 
-  .main .row{
-      max-width: 300px;
-      margin: 25px auto;
-      text-align: left;
-  }
-
-  .main .row > label span{
-      display: block;
-      text-align: left;
-      padding: 0 0 15px;
-  }
-
-  .main input[type=checkbox]{
-      margin-top:0;
-  }
-
-  .main button{
-      margin: 0;
-  }
-}*/
+button#save-button:hover {
+  background-color: #005a9e;
+}

@@ -19,16 +19,28 @@ function openInPopup(url, width, height) {
  * Share Current Tab
  * @return {void}       -
  */
-function shareCurrentTab(tab) {
+function shareCurrentTab(tab, main = true) {
   const url = tab.url;
   const title = tab.title || url;
   browser.storage.local.get().then((storage) => {
-    if(!storage.url){
+    const url = main ? storage.url : storage.altUrl;
+    if(!url){
       browser.runtime.openOptionsPage();
+
       return;
     }
-    const shareUrl = `${storage.url}?post=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&source=bookmarklet`;
+    const shareUrl = `${url}?post=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&source=bookmarklet`;
     openInPopup(shareUrl, storage.popupWidth, storage.popupHeight);
+  });
+}
+
+function browserActionClick (tab) {
+  browser.storage.local.get().then((storage) => {
+    if(!storage.showMenu){
+      shareCurrentTab(tab);
+    } else {
+      browser.browserAction.setPopup({ popup: "src/menu/menu.html" });
+    }
   });
 }
 
@@ -39,7 +51,11 @@ function shareCurrentTab(tab) {
  */
 function showPageAction(tabId){
   browser.storage.local.get().then((storage) => {
-    storage.pageAction ? browser.pageAction.show(tabId) : browser.pageAction.hide(tabId);
+    if (storage.pageAction) {
+      browser.pageAction.show(tabId);
+    } else {
+      browser.pageAction.hide(tabId)
+    }
   });
 }
 
@@ -63,5 +79,19 @@ browser.tabs.query({active: true, currentWindow: true}).then((tabs) => {
 Listeners
  */
 browser.tabs.onActivated.addListener(tabActivation);
-browser.browserAction.onClicked.addListener(shareCurrentTab);
+browser.browserAction.onClicked.addListener(browserActionClick);
 browser.pageAction.onClicked.addListener(shareCurrentTab);
+
+// Listen for messages from menu.js
+browser.runtime.onMessage.addListener((message) => {
+  if (message.action === "show.settings") {
+    browser.runtime.openOptionsPage();
+
+    return;
+  }
+  
+  browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+    const activeTab = tabs[0];
+    shareCurrentTab(activeTab, message.action === "share.main");
+  });
+});

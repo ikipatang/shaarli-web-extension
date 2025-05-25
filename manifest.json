@@ -1,9 +1,14 @@
 {
   "name": "Web Extension for Shaarli",
   "description": "Share your link to your Shaarli on Firefox Quantum",
-  "version": "2.0.0",
+  "version": "2.1.1",
   "homepage_url": "https://github.com/ikipatang/shaarli-web-extension",
   "manifest_version": 2,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "shaarli@imirhil.fr"
+    }
+  },
   "icons": {
     "48": "resources/icons/icon-48.png"
   },

@@ -24,16 +24,24 @@ function updateUI(restoredSettings) {
   // console.dir(restoredSettings, { depth: 10, colors: true }); // DEBUG
 
   // Get HTML input
+  const showMenu = document.querySelector("#showMenu");
   const url = document.querySelector("#url");
   const popupWidth = document.querySelector("#popupWidth");
   const popupHeight = document.querySelector("#popupHeight");
   const pageAction = document.querySelector("#pageAction");
+  const altUrl = document.querySelector("#altUrl");
 
   // Set HTML input with stored values
   url.value = restoredSettings.url;
   popupWidth.value = restoredSettings.popupWidth;
   popupHeight.value = restoredSettings.popupHeight;
   pageAction.checked = restoredSettings.pageAction;
+  showMenu.checked = restoredSettings.showMenu;
+  altUrl.value = restoredSettings.altUrl;
+
+  if(!showMenu.checked) {
+    browser.browserAction.setPopup({ popup: "" });
+  }
 }
 
 /**
@@ -41,16 +49,20 @@ function updateUI(restoredSettings) {
  * @return {void}       -
  */
 function storeSettings() {
+  const showMenu = document.querySelector("#showMenu");
   const url = document.querySelector("#url");
   const popupWidth = document.querySelector("#popupWidth");
   const popupHeight = document.querySelector("#popupHeight");
   const pageAction = document.querySelector("#pageAction");
+  const altUrl = document.querySelector("#altUrl");
 
   const settings = {
+    showMenu: showMenu.checked,
     url: url.value,
     popupWidth: parseIntDimension(popupWidth.value),
     popupHeight: parseIntDimension(popupHeight.value),
     pageAction: pageAction.checked,
+    altUrl: altUrl.value,
   };
   // console.log('storeSettings settings');
   // console.log(settings);

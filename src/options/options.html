@@ -10,24 +10,37 @@
     <div class="main">
       <div class="row">
         <label>
+          <span>Show Menu</span>
+          <input id="showMenu" type="checkbox" name="showMenu" checked>
+        </label>
+      </div>
+      <div class="row">
+        <label>
+          <span>Button address bar</span>
+          <input id="pageAction" type="checkbox" name="pageAction" checked>
+        </label>
+      </div>
+      <div class="row">
+        <label>
+          <span>Popup dimensions (px)</span>
+          <input id="popupWidth" type="text" name="popupWidth">
+          <input id="popupHeight" type="text" name="popupWidth"> (default : 800 x 900)
+        </label>
+      </div>
+      <hr> <!-- Horizontal separator -->
+      <div class="row">
+        <label>
           <span>Shaarli URL</span>
           <input id="url" type="text" name="url">
         </label>
       </div>
       <div class="row">
         <label>
-          <span>Popup dimensions (px)</span>
-          <input id="popupWidth" type="text" name="popupWidth"><input id="popupHeight" type="text" name="popupWidth"> (default : 900 x 600)
+          <span>Alternative</span>
+          <input id="altUrl" type="text" name="altUrl">
         </label>
       </div>
-      <div class="row">
-        <label>
-          <span>Address bar</span>
-          <input id="pageAction" type="checkbox" name="pageAction" checked>
-        </label>
-      </div>
-      <div class="row">
-        <span>&nbsp;</span>
+      <div class="button-row">
         <button id="save-button" type="submit">Save preferences</button>
       </div>
     </div>
