@@ -1,7 +1,7 @@
 /*
 Default settings. Initialize storage to these values.
 */
-var DEFAULT_SETTINGS = {
+const DEFAULT_SETTINGS = {
   showMenu: true,
   retrieveDescription: false,
   pageAction: false,
