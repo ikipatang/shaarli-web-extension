@@ -55,6 +55,10 @@ function storeSettings() {
   const url = document.querySelector("#url");
   const altUrl = document.querySelector("#altUrl");
 
+  if (url.value && altUrl.value) {
+    showMenu.checked = true;
+  }
+
   const settings = {
     showMenu: showMenu.checked,
     pageAction: pageAction.checked,
