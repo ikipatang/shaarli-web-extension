@@ -6,7 +6,10 @@
   "manifest_version": 2,
   "browser_specific_settings": {
     "gecko": {
-      "id": "shaarli@imirhil.fr"
+      "id": "shaarli@imirhil.fr",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   },
   "icons": {
