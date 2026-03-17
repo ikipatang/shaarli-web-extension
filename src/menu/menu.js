@@ -1,13 +1,16 @@
 document.getElementById("settings-button").addEventListener("click", () => {
   browser.runtime.sendMessage({ action: "show.settings" });
+  window.close();
 });
 
 document.getElementById("shaarli-button").addEventListener("click", () => {
   browser.runtime.sendMessage({ action: "share.main" });
+  window.close();
 });
 
 document.getElementById("altShaarli-button").addEventListener("click", () => {
   browser.runtime.sendMessage({ action: "share.alt" });
+  window.close();
 });
 
 // Wait for the DOM to load

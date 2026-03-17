@@ -29,21 +29,21 @@
       <div class="row">
         <label>
           <span>Popup dimensions (px)</span>
-          <input id="popupWidth" type="text" name="popupWidth">
-          <input id="popupHeight" type="text" name="popupWidth"> (default : 800 x 900)
+          <input id="popupWidth" type="number" min="45" name="popupWidth">
+          <input id="popupHeight" type="number" min="45" name="popupHeight"> (default : 800 x 900)
         </label>
       </div>
-      <hr> <!-- Horizontal separator -->
+      <hr>
       <div class="row">
         <label>
           <span>Shaarli URL</span>
-          <input id="url" type="text" name="url">
+          <input id="url" type="url" name="url">
         </label>
       </div>
       <div class="row">
         <label>
           <span>Alternative</span>
-          <input id="altUrl" type="text" name="altUrl">
+          <input id="altUrl" type="url" name="altUrl">
         </label>
       </div>
       <div class="button-row">

@@ -30,7 +30,8 @@
   },
   "browser_action": {
     "default_icon": "resources/icons/icon-24.png",
-    "default_title": "Share"
+    "default_title": "Share",
+    "default_popup": "src/menu/menu.html"
   },
   "page_action": {
     "browser_style": false,
