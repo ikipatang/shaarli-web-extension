@@ -1,71 +1,160 @@
-.main {
-  font: 14px sans-serif;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.main .row {
-  text-align: left;
-  padding-top: 10px;
-}
-
-/* The form title */
-.main .row > label span {
+body {
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #1a1a1a;
-  width: 200px;
-  display: inline-block;
-  vertical-align: middle;
-  padding-left: 5px;
-  padding-right: 30px;
+  background: #f5f5f5;
+  padding: 20px;
+  color-scheme: light dark;
 }
 
-.main input {
-  color:  #1a1a12;
-  width: 31em;
-  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
-  padding: 5px;
-  border: 1px solid #dbdbdb;
+.main {
+  width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-#popupWidth, #popupHeight {
-  width: 50px;
-  margin-right: 10px;
-}
-
-.main input[type=checkbox] {
-  box-shadow: none;
-  width: auto;
-}
-
-.main button {
-  display: block;
-  border-radius: 2px;
-  font-weight: bold;
-  padding: 8px 22px;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid #ccc; /* Lighter gray line */
-  margin: 20px 0;
-}
-
-.main .button-row {
-  display: flex;
-  justify-content: flex-end; /* Align the button to the right */
-  margin-top: 20px;
-  margin-right: 20px;
+h2 {
+  font-size: 18px;
+  font-weight: 600;
   margin-bottom: 20px;
+  color: #333;
 }
 
-button#save-button {
-  padding: 8px 15px;
-  font-size: 14px;
+fieldset {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+legend {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 8px;
+}
+
+.row {
+  padding: 6px 0;
+}
+
+.row label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
-  background-color: #0078d4;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #0078d4;
+  cursor: pointer;
+}
+
+input[type="url"],
+input[type="number"] {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+input[type="url"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: #0078d4;
+  box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.15);
+}
+
+input[type="number"] {
+  width: 80px;
+  flex: none;
+}
+
+.row label span {
+  font-size: 13px;
+  white-space: nowrap;
+  min-width: 90px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+#save-button {
+  padding: 8px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background: #0078d4;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
+  transition: background 0.2s;
 }
 
-button#save-button:hover {
-  background-color: #005a9e;
+#save-button:hover {
+  background: #005a9e;
+}
+
+#save-button:active {
+  background: #004578;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #fbfbfe;
+    background: #1c1b22;
+  }
+
+  .main {
+    background: #2b2a33;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  h2 {
+    color: #fbfbfe;
+  }
+
+  fieldset {
+    border-color: #3a3944;
+  }
+
+  legend {
+    color: #b1b1b3;
+  }
+
+  input[type="url"],
+  input[type="number"] {
+    color: #fbfbfe;
+    background: #42414d;
+    border-color: #5b5b66;
+  }
+
+  input[type="url"]:focus,
+  input[type="number"]:focus {
+    border-color: #0078d4;
+    box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.3);
+  }
+
+  .row label span {
+    color: #fbfbfe;
+  }
 }
