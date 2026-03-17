@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.2.1][] - 2026-03-17
 ### Changed
 - Improve settings menu
 - Show menu active when 2 URL are provided
@@ -69,7 +70,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Create toolbar button
 - Sharing a link will send user to extension settings if no Shaarli URL is set
 
-[Unreleased]: https://github.com/ikipatang/shaarli-web-extension/compare/v2.2.0...HEAD
+[Unreleased]: https://github.com/ikipatang/shaarli-web-extension/compare/v2.2.1...HEAD
+[2.2.1]: https://github.com/ikipatang/shaarli-web-extension/compare/v2.2.0...v2.2.1
 [2.2.0]: https://github.com/ikipatang/shaarli-web-extension/compare/v2.1.1...v2.2.0
 [2.1.1]: https://github.com/ikipatang/shaarli-web-extension/compare/v2.0.0...v2.1.1
 [2.0.0]: https://github.com/ikipatang/shaarli-web-extension/compare/v0.2.6...v2.0.0
