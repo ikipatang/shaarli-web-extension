@@ -6,7 +6,7 @@
  * @return {void}           -
  */
 function openInPopup(url, width, height) {
-  if(browser.windows) {
+  if (browser.windows) {
     browser.windows.create({
       url,
       type: 'popup',
@@ -14,16 +14,18 @@ function openInPopup(url, width, height) {
       width,
       height,
     });
-  }else if(browser.tabs){
+  } else if (browser.tabs) {
     browser.tabs.create({
       active: true,
-      url: url
-    })
+      url,
+    });
   }
 }
 
 /**
  * Share Current Tab
+ * @param  {object}  tab
+ * @param  {boolean} main
  * @return {void}       -
  */
 function shareCurrentTab(tab, main = true) {
@@ -31,77 +33,74 @@ function shareCurrentTab(tab, main = true) {
   const title = tab.title || url;
   browser.storage.local.get().then((storage) => {
     const shaarliUrl = main ? storage.url : storage.altUrl;
-    if(!shaarliUrl){
+    if (!shaarliUrl) {
       browser.runtime.openOptionsPage();
 
       return;
     }
     let shareUrl = `${shaarliUrl}?post=${encodeURIComponent(url)}&source=bookmarklet`;
-    if(!storage.retrieveDescription) {
+    if (!storage.retrieveDescription) {
       shareUrl += `&title=${encodeURIComponent(title)}`;
     }
     openInPopup(shareUrl, storage.popupWidth, storage.popupHeight);
   });
 }
 
-function browserActionClick (tab) {
-  browser.storage.local.get().then((storage) => {
-    if(!storage.showMenu){
-      shareCurrentTab(tab);
-    } else {
-      browser.browserAction.setPopup({ popup: "src/menu/menu.html" });
-    }
-  });
-}
-
 /**
  * Show Page Action on current page if activated
- * @param  {string} tabId - Current tab id
- * @return {void}         -
+ * @param  {number} tabId
  */
-function showPageAction(tabId){
+function showPageAction(tabId) {
   browser.storage.local.get().then((storage) => {
     if (storage.pageAction) {
       browser.pageAction.show(tabId);
     } else {
-      browser.pageAction.hide(tabId)
+      browser.pageAction.hide(tabId);
     }
   });
-}
-
-/**
- * Show page action with given active information
- * @param  {object} activeInfo  -
- * @return {void}               -
- */
-function tabActivation(activeInfo){
-  showPageAction(activeInfo.tabId);
 }
 
 /*
 Initialize
  */
-browser.tabs.query({active: true, currentWindow: true}).then((tabs) => {
+browser.storage.local.get().then((storage) => {
+  if (!storage.showMenu) {
+    browser.browserAction.setPopup({ popup: "" });
+  }
+});
+
+browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
   showPageAction(tabs[0].id);
 });
 
 /*
 Listeners
  */
-browser.tabs.onActivated.addListener(tabActivation);
-browser.browserAction.onClicked.addListener(browserActionClick);
+browser.tabs.onActivated.addListener((activeInfo) => {
+  showPageAction(activeInfo.tabId);
+});
+
+browser.storage.onChanged.addListener((changes) => {
+  if (changes.showMenu) {
+    browser.browserAction.setPopup({
+      popup: changes.showMenu.newValue ? "src/menu/menu.html" : ""
+    });
+  }
+});
+
+browser.browserAction.onClicked.addListener((tab) => {
+  shareCurrentTab(tab);
+});
+
 browser.pageAction.onClicked.addListener(shareCurrentTab);
 
-// Listen for messages from menu.js
 browser.runtime.onMessage.addListener((message) => {
   if (message.action === "show.settings") {
     browser.runtime.openOptionsPage();
-
     return;
   }
-  
+
   browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-    const activeTab = tabs[0];
-    shareCurrentTab(activeTab, message.action === "share.main");
+    shareCurrentTab(tabs[0], message.action === "share.main");
   });
 });

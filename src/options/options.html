@@ -1,57 +1,70 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="options.css"/>
   </head>
-
   <body>
     <div class="main">
-      <div class="row">
-        <label>
-          <span>Show Menu</span>
-          <input id="showMenu" type="checkbox" name="showMenu" checked>
-        </label>
-      </div>
-      <div class="row">
-        <label>
-          <span>Button address bar</span>
-          <input id="pageAction" type="checkbox" name="pageAction" checked>
-        </label>
-      </div>
-      <div class="row">
-        <label>
-          <span>Automatically retrieve description</span>
-          <input id="retrieveDescription" type="checkbox" name="retrieveDescription" checked>
-        </label>
-      </div>
-      <div class="row">
-        <label>
-          <span>Popup dimensions (px)</span>
-          <input id="popupWidth" type="text" name="popupWidth">
-          <input id="popupHeight" type="text" name="popupWidth"> (default : 800 x 900)
-        </label>
-      </div>
-      <hr> <!-- Horizontal separator -->
-      <div class="row">
-        <label>
-          <span>Shaarli URL</span>
-          <input id="url" type="text" name="url">
-        </label>
-      </div>
-      <div class="row">
-        <label>
-          <span>Alternative</span>
-          <input id="altUrl" type="text" name="altUrl">
-        </label>
-      </div>
+      <h2>Shaarli Web Extension</h2>
+
+      <fieldset>
+        <legend>General</legend>
+        <div class="row">
+          <label>
+            <input id="showMenu" type="checkbox" name="showMenu" checked>
+            <span>Show menu</span>
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            <input id="pageAction" type="checkbox" name="pageAction">
+            <span>Button in address bar</span>
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            <input id="retrieveDescription" type="checkbox" name="retrieveDescription">
+            <span>Automatically retrieve description</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Popup</legend>
+        <div class="row">
+          <label>
+            <span>Width</span>
+            <input id="popupWidth" type="number" min="45" name="popupWidth" placeholder="800">
+          </label>
+          <label>
+            <span>Height</span>
+            <input id="popupHeight" type="number" min="45" name="popupHeight" placeholder="900">
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Shaarli instances</legend>
+        <div class="row">
+          <label>
+            <span>Shaarli URL</span>
+            <input id="url" type="url" name="url" placeholder="https://shaarli.example.com">
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            <span>Alt. Shaarli URL</span>
+            <input id="altUrl" type="url" name="altUrl" placeholder="https://shaarli-alt.example.com">
+          </label>
+        </div>
+      </fieldset>
+
       <div class="button-row">
-        <button id="save-button" type="submit">Save preferences</button>
+        <button id="save-button" type="submit">Save</button>
       </div>
     </div>
 
     <script src="options.js"></script>
   </body>
-
 </html>

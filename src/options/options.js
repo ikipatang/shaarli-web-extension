@@ -40,10 +40,6 @@ function updateUI(restoredSettings) {
   popupHeight.value = restoredSettings.popupHeight;
   url.value = restoredSettings.url;
   altUrl.value = restoredSettings.altUrl;
-
-  if(!showMenu.checked) {
-    browser.browserAction.setPopup({ popup: "" });
-  }
 }
 
 /**
@@ -58,6 +54,10 @@ function storeSettings() {
   const popupHeight = document.querySelector("#popupHeight");
   const url = document.querySelector("#url");
   const altUrl = document.querySelector("#altUrl");
+
+  if (url.value && altUrl.value) {
+    showMenu.checked = true;
+  }
 
   const settings = {
     showMenu: showMenu.checked,

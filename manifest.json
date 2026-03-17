@@ -6,7 +6,10 @@
   "manifest_version": 2,
   "browser_specific_settings": {
     "gecko": {
-      "id": "shaarli@imirhil.fr"
+      "id": "shaarli@imirhil.fr",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   },
   "icons": {
@@ -20,11 +23,15 @@
     "page": "src/options/options.html"
   },
   "background": {
-    "scripts": ["src/storage.js", "src/background.js"]
+    "scripts": [
+      "src/storage.js",
+      "src/background.js"
+    ]
   },
   "browser_action": {
     "default_icon": "resources/icons/icon-24.png",
-    "default_title": "Share"
+    "default_title": "Share",
+    "default_popup": "src/menu/menu.html"
   },
   "page_action": {
     "browser_style": false,

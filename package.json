@@ -15,7 +15,7 @@
   "author": "ikipatang",
   "license": "GPL-3.0",
   "devDependencies": {
-    "web-ext": "^8.7.0"
+    "web-ext": "^10.0.0"
   },
   "scripts": {
     "lint": "web-ext lint",
