@@ -80,6 +80,12 @@ browser.tabs.onActivated.addListener((activeInfo) => {
   showPageAction(activeInfo.tabId);
 });
 
+browser.tabs.onUpdated.addListener((tabId, changeInfo) => {
+  if (changeInfo.status === "complete") {
+    showPageAction(tabId);
+  }
+});
+
 browser.storage.onChanged.addListener((changes) => {
   if (changes.showMenu) {
     browser.browserAction.setPopup({

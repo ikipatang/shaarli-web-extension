@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+- fix(): address bar icon now appear correctly on tab update
+
 ## [2.2.1][] - 2026-03-17
 ### Changed
 - Improve settings menu
